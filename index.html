@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Alps Survey</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: url('bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+    .container {
+      max-width: 500px;
+      margin: 80px auto;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+    }
+    h1 {
+      font-size: 22px;
+      margin-bottom: 30px;
+    }
+    .btn {
+      padding: 12px 28px;
+      margin: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background-color: #28a745;
+      color: white;
+      transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #218838;
+    }
+    #letsGo {
+      display: none;
+      background-color: #007bff;
+    }
+    #letsGo:hover {
+      background-color: #0056b3;
+    }
+    @media (max-width: 600px) {
+      .container {
+        margin: 20px;
+      }
+      h1 {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 id="question">Have you ever traveled to the Alps?</h1>
+    <div id="buttons">
+      <button class="btn" onclick="next()">Yes</button>
+      <button class="btn" onclick="next()">No</button>
+    </div>
+    <button id="letsGo" class="btn" onclick="go()">LET'S GO →</button>
+  </div>
+
+  <script>
+    const questions = [
+      "Have you ever traveled to the Alps?",
+      "Have you already participated in our giveaway?",
+      "Would you be able to record a video testimonial if you win?"
+    ];
+    let index = 0;
+    function next() {
+      index++;
+      if (index < questions.length) {
+        document.getElementById("question").innerText = questions[index];
+      } else {
+        // 显示 Thank you 并隐藏按钮
+        document.getElementById("question").innerText = "Thank you for your answers!";
+        document.getElementById("buttons").style.display = "none";
+        document.getElementById("letsGo").style.display = "inline-block";
+      }
+    }
+    function go() {
+      window.location.href = "https://dfstrck.com/?a=169546&c=399492";
+    }
+  </script>
+</body>
+</html>
